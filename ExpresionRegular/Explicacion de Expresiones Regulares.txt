@@ -1,0 +1,27 @@
+Funcionamiento de las expresiones regulares en JAVA
+
+Para el funcionamiento de las expresiones en java en necesario importar la libreria java.util.regex exactamente: 
+
+import.java.util.regex.Matcher;
+import.java.util.regex.Pattern;
+
+
+Estas librerias nos permiten utilizar las clases Pattern y Matcher que nos ayudan a evaluar cadenas de caracteres, es una forma de reconocimiento de lenguaje, la clase Pattern identifica el patron ingresado, mientras que la clase Matcher crea un objeto que permite identificar si los elementos digitados pertenecen a la expresion dada y a nuestra informacion almacenada.
+
+
+  for (int i = 0; i < personas.length; i++) {
+
+            String pat = "(?i)";     					 // ingresamos nuestra expresion regular
+
+            Pattern p = Pattern.compile("(?i)" + nombre);  		 // Definimos el patron de lenguaje, instanciamos la clase Pattern y le 									    enviamos el string a ingresado y la expresion regular.
+
+            Matcher mat = p.matcher(personas[i].nombre);  		// Intanciamos la clase Matcher y creamos un objeto que analiza el 									   string ingresado y verifica que la cadena pertenezca al lenguaje  									    dado 
+            if (mat.find()) {   					 // find() utiliza el objeto creado por la clase Matcher para hacer la 									   busqueda indicada por la expresion regular
+
+                System.out.println(personas[i].nombre + " " + personas[i].apellido + " " + personas[i].edad );
+                 b=1;
+
+            }
+
+
+Las expresiones regulares nos permiten manipular texto haciendo uso del lenguaje mediante librerias especializadas en JAVA.
